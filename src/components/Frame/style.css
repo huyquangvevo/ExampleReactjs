@@ -1,5 +1,16 @@
 circle{
-    stroke: black;
+    stroke: green;
     stroke-width: 2;
     fill: red;
+}
+
+rect{
+    width: 100;
+    height: 100;
+    stroke: blue;
+    fill: gold;
+}
+
+#frame-container{
+    text-align: center;
 }

@@ -1,23 +1,32 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import './style.css';
+import Frame from '../Frame';
 
 class Menu extends Component {
-    state = {  }
+    state = {  
+        shape_: 'circle',
+    }
+
+    changeShape = shapeName => {
+        this.setState({
+            shape_ : shapeName
+        });
+    }
 
     render() { 
         return ( 
-            <div id="menu-container" >
-                <div>
-                    <button className="btn-menu">Circle</button>
+            <React.Fragment>
+                <div id="menu-container" >
+                    <div>
+                        <button className="btn-menu" onClick={() => {this.changeShape('circle')}}>Circle</button>
+                    </div>
+                    <div>
+                        <button className="btn-menu" onClick={() => {this.changeShape('rect')}}>Rectangle</button>
+                    </div>
                 </div>
-                <div>
-                    <button className="btn-menu">Square</button>
-                </div>
-                <div>
-                    <button className="btn-menu">Triagle</button>
-                </div>
-            </div>
+                <Frame shape={this.state.shape_}/>
+            </React.Fragment>
          );
     }
 }
