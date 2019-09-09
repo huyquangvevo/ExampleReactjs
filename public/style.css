@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700');
+* {
+    font-family: "Open Sans", Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+body{
+    background-color: blue;
+}
+
+#root {
+    display: grid;
+    grid-template-areas: 'header header header'
+    'menu frame frame'
+}
+
+#menu-container {
+    grid-area: menu;
+    background-color: coral;
+    text-align: center;
+}
+
+#frame-container {
+    grid-area: frame;
+}
+
+#header-container {
+    grid-area: header;
+    background-color: #667eea;
+}

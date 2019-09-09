@@ -1,3 +1,19 @@
-.btn-block {
-    width: 40px;
+.btn-menu {
+    width: 120px;
+    padding: 10px 20px;
+    background-color:white;
+    border: 1px solid #e7e7e7;
+    border-radius: 6px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btn-menu:hover{
+    background-color: #4CAF50;
+    color: white;
+}
+
+div {
+    padding: 5px 0px;
 }

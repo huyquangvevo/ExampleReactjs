@@ -4,17 +4,18 @@ import './style.css';
 
 class Menu extends Component {
     state = {  }
+
     render() { 
         return ( 
-            <div>
+            <div id="menu-container" >
                 <div>
-                    <button className="btn btn-warning btn-sm btn-block">Circle</button>
+                    <button className="btn-menu">Circle</button>
                 </div>
                 <div>
-                    <button className="btn btn-danger btn-sm btn-block">Square</button>
+                    <button className="btn-menu">Square</button>
                 </div>
                 <div>
-                    <button className="btn btn-info btn-sm btn-block">Triagle</button>
+                    <button className="btn-menu">Triagle</button>
                 </div>
             </div>
          );

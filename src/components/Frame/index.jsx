@@ -1,11 +1,11 @@
 import React,{Component} from 'react';
 import * as d3 from 'd3';
+import "./style.css";
 
 class Frame extends Component {
     state = { 
         locations : []
     };
-    
     componentDidMount(){
         d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(data){
             // Draw the map
@@ -41,8 +41,8 @@ class Frame extends Component {
                     .enter().append("circle").attr("r",Math.random())
                     .attr("cx",function(d){return d.x})
                     .attr("cy",function(d){return d.y})
-                    .attr("stroke","black").attr("strokeWidth",3)
-                    .attr("fill","red");
+                    // .attr("stroke","black").attr("strokeWidth",3)
+                    // .attr("fill","red");
                 })
                 .then(()=>{
                     this.handleScale();
@@ -59,8 +59,11 @@ class Frame extends Component {
 
     render() {
         return ( 
-            <svg width={1200} height = {450} viewBox = "0 0 800 450" color="blue">
-            </svg>
+            <div id="frame-container">
+                <svg width={1200} height = {450} viewBox = "0 0 800 450" color="blue">
+                </svg>
+            </div>
+            
          );
     }
 }
