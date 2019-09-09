@@ -32,22 +32,23 @@ class Frame extends Component {
                     this.setState({
                         locations : result
                     });
-                
                 })
                 .then( () => {
-                    d3.select("svg").append("g")
-                    .selectAll("circle")
-                    .data(this.state.locations)
-                    .enter().append("circle").attr("r",Math.random())
-                    .attr("cx",function(d){return d.x})
-                    .attr("cy",function(d){return d.y})
-                    // .attr("stroke","black").attr("strokeWidth",3)
-                    // .attr("fill","red");
+                    this.addPoints();
                 })
                 .then(()=>{
                     this.handleScale();
                 });
         });
+    }
+
+    addPoints = () => {
+        d3.select("svg").append("g")
+        .selectAll("circle")
+        .data(this.state.locations)
+        .enter().append("circle").attr("r",Math.random())
+        .attr("cx",function(d){return d.x})
+        .attr("cy",function(d){return d.y})
     }
 
     handleScale = () =>{

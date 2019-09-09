@@ -7,6 +7,7 @@ const App = () =>(
     <React.Fragment>
         <Header/>
         <Menu/>
+        <Frame/>
     </React.Fragment>
 );
 
