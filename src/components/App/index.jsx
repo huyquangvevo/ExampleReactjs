@@ -5,6 +5,7 @@ import {BrowserRouter as Router,Route} from 'react-router-dom';
 import WordCloud from '../WordCloud';
 
 const App = () =>(
+    
     <Router>
         <React.Fragment>
             <Header/>
