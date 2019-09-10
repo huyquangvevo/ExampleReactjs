@@ -17,12 +17,14 @@ class Menu extends Component {
     render() { 
         return ( 
             <React.Fragment>
-                <div id="menu-container" >
-                    <div>
-                        <button className="btn-menu" onClick={() => {this.changeShape('circle')}}>Circle</button>
-                    </div>
-                    <div>
-                        <button className="btn-menu" onClick={() => {this.changeShape('rect')}}>Rectangle</button>
+                <div className="row">
+                    <div className="col">
+                        <div>
+                            <button className="btn-menu" onClick={() => {this.changeShape('circle')}}>Circle</button>
+                        </div>
+                        <div>
+                            <button className="btn-menu" onClick={() => {this.changeShape('rect')}}>Rectangle</button>
+                        </div>
                     </div>
                 </div>
                 <Frame shape={this.state.shape_}/>

@@ -94,7 +94,7 @@ class Frame extends Component {
     render() {
         this.addPoints(this.props.shape);
         return ( 
-            <div id="frame-container">
+            <div className="col col-lg-2">
                 <svg width={1200} height = {650} viewBox = "0 0 800 450" color="blue">
                 </svg>
             </div>
