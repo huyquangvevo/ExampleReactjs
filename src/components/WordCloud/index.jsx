@@ -4,16 +4,29 @@ import ReactWordcloud from 'react-wordcloud';
 
 
 class WordCloud extends Component {
-
+    
     constructor(props){
         super(props);
-        let str = "I know your eyes in the morning sun I feel you touch my hand in the pouring rain And the moment that you wander far from me I wanna feel you in my arms again And you me on you warm in your you And me you your you you you And And And And And you you"
-        // let str = "Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Huy Hoa"
-        var words_ = this.getWords(str);
         this.state = {
-            words : words_,
-            fontWordCloud : 'sans-serif',           
-        }
+            words : [{"text":"Huy","value":12},{"text":"Hoang","value":30}],
+            fontWordCloud : 'sans-serif',
+            candidate : this.props.match.params.personId         
+        };
+        this.fetchWord(this.state.candidate);
+    }
+
+    fetchWord = personId => {
+        var url = 'http://127.0.0.1:5000/candidates/';
+        url = url + personId;
+        fetch(url)
+            .then(res => {
+                return res.json();
+            })
+            .then((result) =>{
+                this.setState({
+                    words : result
+                });
+            });
     }
 
     getWords = str => {
@@ -35,27 +48,25 @@ class WordCloud extends Component {
                 value : value
             });
         }
-        console.log(arrayWords);
         return arrayWords;
     }
 
     toggleFontWordCloud = () => {
         this.setState({
-            fontWordCloud : this.state.fontWordCloud === 'Impact' ? 'sans-serif' : 'Impact' 
-        })
+            fontWordCloud : this.state.fontWordCloud === 'Impact' ? 'sans-serif' : 'Impact'
+        });
     }
     
     render() { 
-        console.log("render words",this.state.words);
         return (  
             <div className="row">
                 <div className="col-3">
                     <button className="btn btn-warning" onClick={this.toggleFontWordCloud}>Update Option</button>
                 </div>
                 <div className="col" >
-                    <ReactWordcloud words = {this.state.words} 
+                    <ReactWordcloud words = {this.state.words} key={Math.random()}
                         options = {{ fontSizes: [25, 80], fontFamily:this.state.fontWordCloud }}
-                        size = {[600,600]} />  
+                        size = {[1200,700]} /> 
                </div>
             </div>
         );

@@ -19,6 +19,9 @@ class Header extends Component {
                         <li className="nav-item">
                             <Link to="/wordcloud" className="nav-link" >Word Cloud</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/candidates" className="nav-link" >Candidates</Link>
+                        </li>
                     </ul>
                 </div>
             </nav>
