@@ -1,0 +1,3 @@
+export const LOAD_PEOPLE = 'LOAD_PEOPLE';
+export const SELECT_PERSON = 'SELECT_PERSON';
+export const FETCH_KEYWORDS = 'FETCH_KEYWORDS';
